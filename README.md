@@ -9,3 +9,7 @@
   b. v1.0.0:
     1. Added front-end template.
     2. Added design files.
+
+  c. v1.1.0:
+    1. Added pages module.
+    2. Added ckeditor.

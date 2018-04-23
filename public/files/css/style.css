@@ -223,7 +223,7 @@ div#about h2 {
 	    font-style: italic;
     color: #00ff0a;
 }
-.box span.fa {
+.box span.fa, .box address.fa {
     font-size: 45px;
 	    margin: 20px 0px;
 	    color: #FFEB3B;
@@ -237,7 +237,7 @@ div#about h2 {
 	margin: 30px 0px;
   /*  display: inline-block;
     width: 30%;
-    
+
 	    padding: 0px 15px; */
 }
 .ask-help {
@@ -426,12 +426,12 @@ p.designation {
 	    font-style: italic;
 }
 
-/*-- social-wthree-icons --*/  
+/*-- social-wthree-icons --*/
 .social-wthree-icons ul li {
     display: inline-block;
 }
-.social-wthree-icons ul li { 
-    text-align: center; 
+.social-wthree-icons ul li {
+    text-align: center;
 }
 .social-wthree-icons ul li a.fa {
     font-size: 0.9em;
@@ -470,49 +470,49 @@ p.designation {
 	-o-border-radius: 50%;
 	-ms-border-radius: 50%;
 	border-radius: 50%;
-} 
+}
 .icon-border::before {
 	z-index: 1;
 	-webkit-transition: box-shadow 0.3s;
 	-moz-transition: box-shadow 0.3s;
 	-o-transition: box-shadow 0.3s;
 	-ms-transition: box-shadow 0.3s;
-    transition: box-shadow 0.3s;      
-}  
+    transition: box-shadow 0.3s;
+}
 .social-wthree-icons ul li a.fa.facebook:hover{
 	color:#3b5998;
 background-color: white;
     border-radius: 50%;
-    border: 2px solid white;	
-} 
+    border: 2px solid white;
+}
 .social-wthree-icons ul li a.fa.twitter:hover{
-	color:#4099ff; 
+	color:#4099ff;
 background-color: white;
     border-radius: 50%;
-    border: 2px solid white;	
-} 
+    border: 2px solid white;
+}
 .social-wthree-icons ul li a.fa.googleplus:hover{
-	color:#d34836; 
+	color:#d34836;
 background-color: white;
     border-radius: 50%;
-    border: 2px solid white;	
-} 
- 
+    border: 2px solid white;
+}
+
 /* facebook */
 .icon-border.facebook::before {
-	-webkit-box-shadow: inset 0 0 0 48px #3b5998; 
-	-moz-box-shadow: inset 0 0 0 48px #3b5998; 
-	-o-box-shadow: inset 0 0 0 48px #3b5998; 
-	-ms-box-shadow: inset 0 0 0 48px #3b5998; 
-	box-shadow: inset 0 0 0 48px #3b5998;  
-} 
+	-webkit-box-shadow: inset 0 0 0 48px #3b5998;
+	-moz-box-shadow: inset 0 0 0 48px #3b5998;
+	-o-box-shadow: inset 0 0 0 48px #3b5998;
+	-ms-box-shadow: inset 0 0 0 48px #3b5998;
+	box-shadow: inset 0 0 0 48px #3b5998;
+}
 .icon-border.facebook:hover::before {
-	-webkit-box-shadow: inset 0 0 0 2px #3b5998; 
-	-moz-box-shadow: inset 0 0 0 2px #3b5998; 
-	-o-box-shadow: inset 0 0 0 2px #3b5998; 
-	-ms-box-shadow: inset 0 0 0 2px #3b5998; 
-	box-shadow: inset 0 0 0 2px #3b5998; 
-}  
+	-webkit-box-shadow: inset 0 0 0 2px #3b5998;
+	-moz-box-shadow: inset 0 0 0 2px #3b5998;
+	-o-box-shadow: inset 0 0 0 2px #3b5998;
+	-ms-box-shadow: inset 0 0 0 2px #3b5998;
+	box-shadow: inset 0 0 0 2px #3b5998;
+}
 /* twitter */
 .icon-border.twitter::before {
 	-webkit-box-shadow: inset 0 0 0 48px #4099ff;
@@ -520,14 +520,14 @@ background-color: white;
 	-o-box-shadow: inset 0 0 0 48px #4099ff;
 	-ms-box-shadow: inset 0 0 0 48px #4099ff;
 	box-shadow: inset 0 0 0 48px #4099ff;
-} 
+}
 .icon-border.twitter:hover::before {
 	-webkit-box-shadow: inset 0 0 0 2px #4099ff;
 	-moz-box-shadow: inset 0 0 0 2px #4099ff;
 	-o-box-shadow: inset 0 0 0 2px #4099ff;
 	-ms-box-shadow: inset 0 0 0 2px #4099ff;
 	box-shadow: inset 0 0 0 2px #4099ff;
-} 
+}
 /* google plus */
 .icon-border.googleplus::before {
 	-webkit-box-shadow: inset 0 0 0 48px #d34836;
@@ -535,14 +535,14 @@ background-color: white;
 	-o-box-shadow: inset 0 0 0 48px #d34836;
 	-ms-box-shadow: inset 0 0 0 48px #d34836;
 	box-shadow: inset 0 0 0 48px #d34836;
-} 
+}
 .icon-border.googleplus:hover::before {
 	-webkit-box-shadow: inset 0 0 0 2px #d34836;
 	-moz-box-shadow: inset 0 0 0 2px #d34836;
 	-o-box-shadow: inset 0 0 0 2px #d34836;
 	-ms-box-shadow: inset 0 0 0 2px #d34836;
 	box-shadow: inset 0 0 0 2px #d34836;
-} 
+}
 
 /*-- //social-wthree-icons --*/
 
@@ -638,6 +638,12 @@ input[type="Submit"]:hover {
     margin-bottom: 15px;
 	    font-size: 30px;
 }
+.address address.fa {
+    display: block;
+    text-align: center;
+    margin-bottom: 15px;
+	    font-size: 30px;
+}
 h3.my-logo {
     text-align: center;
     text-transform: uppercase;
@@ -675,7 +681,7 @@ ul.icons1 li:hover a.w3ls-pinterest {
 }
 ul.icons1 li:hover a.w3ls-dribbble {
      color: #ea4c89;
-	
+
 }
 ul.icons1 li:hover {
     background-color: white;
@@ -701,7 +707,7 @@ ul.icons1 li:hover {
 	bottom: 20px;
 	right: 2%;
 	overflow: hidden;
-	z-index: 999; 
+	z-index: 999;
 	width: 40px;
 	height: 40px;
 	border: none;
@@ -727,11 +733,11 @@ ul.icons1 li:hover {
 	.agile-banner {
 		min-height: 700px;
 	}
-	
+
 	.ask-help {
 		background-position: 80% 50%;
 }
-	
+
 }
 
 @media screen and (max-width: 1280px){}
@@ -929,7 +935,7 @@ div#about p {
 .w3ls-nav {
     text-align: center;
 }
-/* 
+/*
  .navbar-top {
 position: relative;
 }

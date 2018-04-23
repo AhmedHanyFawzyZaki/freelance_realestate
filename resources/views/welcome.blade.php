@@ -19,9 +19,9 @@
 	<link href="//fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,700i,800,900" rel="stylesheet">
 	  	<!-- scripts -->
 	<script src="{{ url('/') }}/files/js/jquery.min.js"></script>
+  <script src="{{ url('/') }}/files/js/jquery.vide.min.js"></script>
 </head>
 <body>
-<script src="{{ url('/') }}/files/js/jquery.vide.min.js"></script>
 	<div data-vide-bg="{{ url('/') }}/files/video/real2" class="agile-banner">
 		<div class="bg-mask">
 			<nav class="navbar w3-navbar">
@@ -30,7 +30,7 @@
 						<!--<div class="nav-top">
 							<div class="w3-contact">
 								<a> <span class="fa fa-volume-control-phone" aria-hidden="true"> </span>+692 527 6524</a>
-								<a href="mailto:abcd@yoursite.com"><span class="fa fa-envelope-o" aria-hidden="true" ></span>admin@realbuild.com</a>
+								<a href="mailto:abcd@yoursite.com"><span class="fa fa-envelope-o" aria-hidden="true" ></span>admin@Real-Estate.com</a>
 							</div>
 							<div class="w3-socials">
 								<ul>
@@ -53,46 +53,46 @@
 						<div class="row">
 
 							<div class="navbar-header">
-							  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-							  </button>
+							  <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+  								<span class="sr-only">Toggle navigation</span>
+  								<span class="icon-bar"></span>
+  								<span class="icon-bar"></span>
+  								<span class="icon-bar"></span>
+							  </button>-->
 
 							  <!-- Logo -->
 							  <div class="logo-container">
-								<div class="logo-wrap">
-								  <a href="#home" class="scroll">
-									Realbuild
-								  </a>
-								</div>
+  								<div class="logo-wrap">
+  								  <a href="#home" class="scroll">
+  									{{ config('app.name', 'Laravel') }}
+  								  </a>
+  								</div>
 							  </div>
 							</div> <!-- end navbar-header -->
 
 
 							<div class="col-md-8 col-xs-12 nav-wrap">
-								<div class="collapse text-center navbar-collapse w3ls-nav navbar-collapse">
+								<div class="text-center navbar-collapse w3ls-nav navbar-collapse">
 
 									<ul class="nav navbar-nav w3ls-nav1 text-center">
 
-										<li class="active">
-											<a href="#home" class="scroll">Home</a>
+										<li class="">
+											<a href="#home" class="scroll">{{__('messages.Home')}}</a>
 										</li>
 										<li>
-											<a href="#about" class="scroll">About</a>
+											<a href="#about" class="scroll">{{__('messages.About')}}</a>
 										</li>
 										<li>
-											<a href="#partners" class="scroll">Partners</a>
+											<a href="#partners" class="scroll">{{__('messages.Partners')}}</a>
 										</li>
 										<li>
-											<a href="#property" class="scroll">Gallery</a>
+											<a href="#property" class="scroll">{{__('messages.Gallery')}}</a>
 										</li>
-										<li>
+										<!--<li>
 											<a href="#agent" class="scroll">Agents</a>
-										</li>
+										</li>-->
 										<li>
-											<a href="#contact" class="scroll">Contact</a>
+											<a href="#contact" class="scroll">{{__('messages.Contact')}}</a>
 										</li>
 
 									</ul>
@@ -102,103 +102,40 @@
 					</div> <!-- end container -->
 				</div> <!-- end navigation -->
 			</nav> <!-- end navbar -->
-
+      @if (Session::has('flash_message'))
+          <div class="container">
+              <br>
+              <div class="alert alert-success">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  {{ Session::get('flash_message') }}
+              </div>
+          </div>
+      @endif
 			<div class="heading">
-				<h1>The Fastest Growing RealEstate Business</h1>
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-				<a href="#" data-toggle="modal" data-target="#property0">Know More</a>
-						<!-- bootstrap-pop-up -->
-						<div class="modal video-modal fade" id="property0" tabindex="-1" role="dialog" >
-							<div class="modal-dialog" role="document">
-								<div class="modal-content">
-									<div class="modal-header">
-										Realbuild
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-									</div>
-									<section>
-										<div class="modal-body">
-											<img src="{{ url('/') }}/files/images/property7.jpg" alt=" " class="img-responsive" />
-											<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, making it look like readable English.</p>
-										</div>
-									</section>
-								</div>
-							</div>
-						</div>
-					<!-- //bootstrap-pop-up -->
+				{!! $home->getContent() !!}
+				<a href="#about" class="scroll">{{__('messages.Know More')}}</a>
 			</div>
 
 		</div>
 	</div>
 	<!-- About us -->
 	<div class="agile-about" id="about">
-		<h3 class="center">About Us</h3>
-		<div class="container">
-			<h2>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</h2>
-			<h4> Types Of Our Business</h4>
-			<div class="service">
-				<div class="col-md-4 col-sm-4 box">
-					<span class="fa fa-university" aria-hidden="true"></span>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-				</div>
-				<div class="col-md-4 col-sm-4 box">
-					<span class="fa fa-diamond" aria-hidden="true"></span>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-				</div>
-				<div class="col-md-4 col-sm-4 box">
-					<span class="fa fa-road" aria-hidden="true"></span>
-					<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-				</div>
-				<div class="clearfix"></div>
-			</div><div class="clearfix"></div>
-		</div>
-
-		<div class="ask-help">
-			<div class="container">
-				<div class="help-txt">
-					<h5>Ask Our Experts About Your Doubts</h5>
-					<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-					<a href="#contact" class="scroll" >Get a Quote</a>
-				</div>
-			</div>
-		</div>
+		{!! $about->getContent() !!}
 	</div>
 	<!-- //About us -->
   <!-- Partners -->
 	<div class="agile-partner" id="partners">
-		<h3 class="center">Our Partners</h3>
+		<h3 class="center">{{__('messages.Our Partners')}}</h3>
 		<div class="container">
-			<div class="col-md-3 col-sm-3 partner">
-				<img src="{{ url('/') }}/files/images/logo1.jpg" class="img-responsive" alt="Partners">
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page.<p>
-			</div>
-			<div class="col-md-3 col-sm-3 partner">
-				<img src="{{ url('/') }}/files/images/logo2.jpg" class="img-responsive" alt="Partners">
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page.<p>
-			</div>
-			<div class="col-md-3 col-sm-3 partner">
-				<img src="{{ url('/') }}/files/images/logo3.jpg" class="img-responsive" alt="Partners">
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page.<p>
-			</div>
-			<div class="col-md-3 col-sm-3 partner">
-				<img src="{{ url('/') }}/files/images/logo4.jpg" class="img-responsive" alt="Partners">
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page.<p>
-			</div>
-			<div class="col-md-3 col-sm-3 partner">
-				<img src="{{ url('/') }}/files/images/logo5.jpg" class="img-responsive" alt="Partners">
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page.<p>
-			</div>
-			<div class="col-md-3 col-sm-3 partner">
-				<img src="{{ url('/') }}/files/images/logo6.jpg" class="img-responsive" alt="Partners">
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page.<p>
-			</div>
-			<div class="col-md-3 col-sm-3 partner">
-				<img src="{{ url('/') }}/files/images/logo7.jpg" class="img-responsive" alt="Partners">
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page.<p>
-			</div>
-			<div class="col-md-3 col-sm-3 partner">
-				<img src="{{ url('/') }}/files/images/logo8.jpg" class="img-responsive" alt="Partners">
-				<p>It is a long established fact that a reader will be distracted by the readable content of a page.<p>
-			</div>
+      @if($partners)
+        @foreach($partners as $partner)
+    			<div class="col-md-3 col-sm-3 partner">
+    				<img src="{{ url('/') }}/partnerImage/{{ $partner->image }}" class="img-responsive" alt="{{ $partner->name }}">
+    				{!! $partner->getDescription() !!}
+    			</div>
+        @endforeach
+      @endif
+
 			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>
@@ -206,43 +143,31 @@
   <!-- //Partners -->
   <!-- Gallery Property -->
 	<div class="w3ls-property" id="property">
-		<h3 class="center">Properties</h3>
+		<h3 class="center">{{__('messages.Properties')}}</h3>
 		<div class="container">
+      @if($properties)
+        @foreach($properties as $property)
 			<div class="col-md-4 col-sm-4 prop">
-				<div data-toggle="modal" data-target="#property1" class="mask">
-				<img src="{{ url('/') }}/files/images/property1.jpg" class="img-responsive zoom-img" alt="Property">
+				<div data-toggle="modal" data-target="#property{{$property->id}}" class="mask">
+				<img src="{{ url('/') }}/propertyImage/{{ $property->cover_image }}" class="img-responsive zoom-img" alt="{{ $property->getName() }}">
 				</div>
-				<h4 class="pricetag"> $ 480 </h4>
-				<h6>Property1</h6>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-				<a href="#" data-toggle="modal" data-target="#property1">Know More</a>
+				<h4 class="pricetag"> {{ $property->price }} </h4>
+				<h6>{{ $property->getName() }}</h6>
+				<p>{!! $property->getIntroduction() !!}</p>
+				<a href="#" data-toggle="modal" data-target="#property{{ $property->id }}">{{__('messages.Know More')}}</a>
 					<!-- bootstrap-pop-up -->
-					<div class="modal video-modal fade" id="property1" tabindex="-1" role="dialog" >
+					<div class="modal video-modal fade" id="property{{ $property->id }}" tabindex="-1" role="dialog" >
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
 								<div class="modal-header">
-									Realbuild
+									{{ $property->getName() }}
 									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 								</div>
 								<section>
 									<div class="modal-body">
-										<img src="{{ url('/') }}/files/images/property1.jpg" alt=" " class="img-responsive" />
-										<h4 class="pricetag"> $ 5480 </h4>
-										<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-										<ul class="house-list">
-											<li>
-												<p>Number of Bedrooms</p><span class="num"> : 3 </span>
-											</li>
-											<li>
-												<p>Number of bathrooms/ensuites</p><span class="num"> : 5 </span>
-											</li>
-											<li>
-												<p>Parking</p><span class="num"> : Available </span>
-											</li>
-											<li>
-												<p>Size of garden/outside space</p><span class="num"> : 1,433 sqft </span>
-											</li>
-										</ul>
+										<img src="{{ url('/') }}/propertyImage/{{ $property->main_image }}" alt=" " class="img-responsive" />
+										<h4 class="pricetag"> {{ $property->price }} </h4>
+										{!! $property->getDescription() !!}
 									</div>
 								</section>
 							</div>
@@ -250,223 +175,15 @@
 					</div>
 				<!-- //bootstrap-pop-up -->
 			</div>
-			<div class="col-md-4 col-sm-4 prop">
-				<div data-toggle="modal" data-target="#property2"  class="mask">
-				<img src="{{ url('/') }}/files/images/property2.jpg" class="img-responsive zoom-img" alt="Property">
-				</div>
-				<h4 class="pricetag"> $ 250 </h4>
-				<h6>Property2</h6>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-				<a href="#" data-toggle="modal" data-target="#property2">Know More</a>
-					<!-- bootstrap-pop-up -->
-					<div class="modal video-modal fade" id="property2" tabindex="-1" role="dialog" >
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									Realbuild
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								</div>
-								<section>
-									<div class="modal-body">
-										<img src="{{ url('/') }}/files/images/property2.jpg" alt=" " class="img-responsive" />
-										<h4 class="pricetag"> $ 3480 </h4>
-										<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-										<ul class="house-list">
-											<li>
-												<p>Number of Bedrooms</p><span class="num"> : 2 </span>
-											</li>
-											<li>
-												<p>Number of bathrooms/ensuites</p><span class="num"> : 3 </span>
-											</li>
-											<li>
-												<p>Parking</p><span class="num"> : Available </span>
-											</li>
-											<li>
-												<p>Size of garden/outside space</p><span class="num"> : 1,033 sqft </span>
-											</li>
-										</ul>
-									</div>
-								</section>
-							</div>
-						</div>
-					</div>
-				<!-- //bootstrap-pop-up -->
-			</div>
-			<div class="col-md-4 col-sm-4 prop">
-				<div data-toggle="modal" data-target="#property3"  class="mask">
-				<img src="{{ url('/') }}/files/images/property3.jpg" class="img-responsive zoom-img" alt="Property">
-				</div>
-				<h4 class="pricetag"> $ 410 </h4>
-				<h6>Property3</h6>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-				<a href="#" data-toggle="modal" data-target="#property3">Know More</a>
-					<!-- bootstrap-pop-up -->
-					<div class="modal video-modal fade" id="property3" tabindex="-1" role="dialog" >
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									Realbuild
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								</div>
-								<section>
-									<div class="modal-body">
-										<img src="{{ url('/') }}/files/images/property3.jpg" alt=" " class="img-responsive" />
-										<h4 class="pricetag"> $ 2480 </h4>
-										<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-										<ul class="house-list">
-											<li>
-												<p>Number of Bedrooms</p><span class="num"> : 1 </span>
-											</li>
-											<li>
-												<p>Number of bathrooms/ensuites</p><span class="num"> : 3 </span>
-											</li>
-											<li>
-												<p>Parking</p><span class="num"> : Available </span>
-											</li>
-											<li>
-												<p>Size of garden/outside space</p><span class="num"> : 1,003 sqft </span>
-											</li>
-										</ul>
-									</div>
-								</section>
-							</div>
-						</div>
-					</div>
-				<!-- //bootstrap-pop-up -->
-			</div>
-			<div class="col-md-4 col-sm-4 prop">
-				<div data-toggle="modal" data-target="#property5"  class="mask">
-					<img src="{{ url('/') }}/files/images/property5.jpg" class="img-responsive zoom-img" alt="Property">
-				</div>
-				<h4 class="pricetag"> $ 190 </h4>
-				<h6>Property4</h6>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-				<a href="#" data-toggle="modal" data-target="#property5">Know More</a>
-					<!-- bootstrap-pop-up -->
-					<div class="modal video-modal fade" id="property5" tabindex="-1" role="dialog" >
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									Realbuild
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								</div>
-								<section>
-									<div class="modal-body">
-										<img src="{{ url('/') }}/files/images/property5.jpg" alt=" " class="img-responsive" />
-										<h4 class="pricetag"> $ 3480 </h4>
-										<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-										<ul class="house-list">
-											<li>
-												<p>Number of Bedrooms</p><span class="num"> : 3 </span>
-											</li>
-											<li>
-												<p>Number of bathrooms/ensuites</p><span class="num"> : 5 </span>
-											</li>
-											<li>
-												<p>Parking</p><span class="num"> : Available </span>
-											</li>
-											<li>
-												<p>Size of garden/outside space</p><span class="num"> : 1,433 sqft </span>
-											</li>
-										</ul>
-									</div>
-								</section>
-							</div>
-						</div>
-					</div>
-				<!-- //bootstrap-pop-up -->
-			</div>
-			<div class="col-md-4 col-sm-4 prop">
-				<div data-toggle="modal" data-target="#property6"  class="mask">
-					<img src="{{ url('/') }}/files/images/property6.jpg" class="img-responsive zoom-img" alt="Property">
-				</div>
-				<h4 class="pricetag"> $ 340 </h4>
-				<h6>Property5</h6>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-				<a href="#" data-toggle="modal" data-target="#property6">Know More</a>
-					<!-- bootstrap-pop-up -->
-					<div class="modal video-modal fade" id="property6" tabindex="-1" role="dialog" >
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									Realbuild
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								</div>
-								<section>
-									<div class="modal-body">
-										<img src="{{ url('/') }}/files/images/property6.jpg" alt=" " class="img-responsive" />
-										<h4 class="pricetag"> $ 4280 </h4>
-										<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-										<ul class="house-list">
-											<li>
-												<p>Number of Bedrooms</p><span class="num"> : 2 </span>
-											</li>
-											<li>
-												<p>Number of bathrooms/ensuites</p><span class="num"> : 4 </span>
-											</li>
-											<li>
-												<p>Parking</p><span class="num"> : Available </span>
-											</li>
-											<li>
-												<p>Size of garden/outside space</p><span class="num"> : 1,033 sqft </span>
-											</li>
-										</ul>
-									</div>
-								</section>
-							</div>
-						</div>
-					</div>
-				<!-- //bootstrap-pop-up -->
-			</div>
-			<div class="col-md-4 col-sm-4 prop">
-				<div data-toggle="modal" data-target="#property7"  class="mask">
-					<img src="{{ url('/') }}/files/images/property7.jpg" class="img-responsive zoom-img" alt="Property">
-				</div>
-				<h4 class="pricetag"> $ 390 </h4>
-				<h6>Property6</h6>
-				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-				<a href="#" data-toggle="modal" data-target="#property7">Know More</a>
-					<!-- bootstrap-pop-up -->
-					<div class="modal video-modal fade" id="property7" tabindex="-1" role="dialog" >
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									Realbuild
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								</div>
-								<section>
-									<div class="modal-body">
-										<img src="{{ url('/') }}/files/images/property7.jpg" alt=" " class="img-responsive" />
-										<h4 class="pricetag"> $ 5480 </h4>
-										<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-										<ul class="house-list">
-											<li>
-												<p>Number of Bedrooms</p><span class="num"> : 3 </span>
-											</li>
-											<li>
-												<p>Number of bathrooms/ensuites</p><span class="num"> : 5 </span>
-											</li>
-											<li>
-												<p>Parking</p><span class="num"> : Available </span>
-											</li>
-											<li>
-												<p>Size of garden/outside space</p><span class="num"> : 1,433 sqft </span>
-											</li>
-										</ul>
-									</div>
-								</section>
-							</div>
-						</div>
-					</div>
-				<!-- //bootstrap-pop-up -->
-			</div>
+        @endforeach
+      @endif
 			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>
 	</div>
 	<!-- //Gallery Property-->
 	<!-- our guides -->
-	<div class="w3-guides" id="agent">
+	<!--<div class="w3-guides" id="agent">
 		<div class="container">
 			<h3 class="text-center">Our Agents</h3>
 			<div class="guide-grids">
@@ -530,79 +247,56 @@
 			</div>
 			<div class="clearfix"> </div>
 		</div>
-	</div>
+	</div>-->
 	<!-- //our guides -->
 	<!-- testimonials -->
 
 	<!-- //testimonials -->
   <!-- contact -->
 	<div class="w3ls-contact" id="contact">
-		<h3 class="center">Contact Us</h3>
+		<h3 class="center">{{__('messages.Contact Us')}}</h3>
 		<div class="container">
-			<form action="/" method="get">
+			<form action="{{ route('contactUs') }}" method="post">
+        {{ csrf_field() }}
 				<div class="form-input">
-					<label>Name <span class="w3-star"> * </span> </label>
-					<input type="text" name="name" placeholder="Your Name" required>
+					<label>{{__('messages.Name')}} <span class="w3-star"> * </span> </label>
+					<input type="text" name="name" placeholder="{{__('messages.Your Name')}}" required>
 				</div>
 				<div class="form-input">
-					<label>Email <span class="w3-star"> * </span> </label>
-					<input type="email" name="email" placeholder="Your Email" required>
+					<label>{{__('messages.Email')}} <span class="w3-star"> * </span> </label>
+					<input type="email" name="email" placeholder="{{__('messages.Your Email')}}" required>
 				</div>
 				<div class="form-input">
-					<label>Phone <span class="w3-star"> * </span> </label>
-					<input type="text" name="mobile" placeholder="Phone Number" required>
+					<label>{{__('messages.Phone')}} <span class="w3-star"> * </span> </label>
+					<input type="text" name="phone" placeholder="{{__('messages.Phone Number')}}" required>
 				</div>
 				<div class="form-textarea">
-					<label>Message <span class="w3-star"> * </span> </label>
-					<textarea name="message" placeholder="Your Message" rows="5" cols="20" required></textarea>
+					<label>{{__('messages.Message')}} <span class="w3-star"> * </span> </label>
+					<textarea name="message" placeholder="{{__('messages.Your Message')}}" rows="5" cols="20" required></textarea>
 				</div>
-				<input type="Submit" value="Submit Message">
+				<input type="Submit" value="{{__('messages.Submit Message')}}">
 			</form>
 			<div class="map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d396368.68564402737!2d-94.8559081017095!3d39.09211671179675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0f75eafe99997%3A0x558525e66aaa51a2!2sKansas+City%2C+MO%2C+USA!5e0!3m2!1sen!2sin!4v1509960130500" allowfullscreen></iframe>
+				{!! $map->getContent() !!}
 			</div>
 		</div>
 			<div class="agile-contact1">
 				<div class="container">
 
-					<div class="address">
-						<div class="add-phone">
-							<span class="fa fa-phone" aria-hidden="true"></span>
-							<p>+952 8745 1245</p>
-							<p>+952 8745 6789</p>
-						</div>
-						<div class="add-email">
-							<span class="fa fa-envelope" aria-hidden="true"></span>
-							<a href="mailto:abcd@yoursite.com"> query@realbuild.com </a>
-							<a href="mailto:abcd@yoursite.com"> service@realbuild.com </a>
-
-						</div>
-						<div class="add-area">
-							<span class="fa fa-map-marker" aria-hidden="true"></span>
-							<p>Boston Street Area</p>
-							<p>Town Hills, USA</p>
-						</div>
-					</div>
-					<h3 class="my-logo"> Realbuild </h3>
+					{!! $contact->getContent() !!}
+					<h3 class="my-logo"> {{ config('app.name', 'Laravel') }} </h3>
 
 					<div class="footer-icons">
-						<ul class="icons1">
-							<li><a href="#" class="w3ls-facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
-							<li><a href="#" class="w3ls-twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
-							<li><a href="#" class="w3ls-google"><span class="fa fa-google-plus" aria-hidden="true"></span></a></li>
-							<li><a href="#" class="w3ls-pinterest"><span class="fa fa-pinterest-p" aria-hidden="true"></span></a></li>
-							<li><a href="#" class="w3ls-dribbble"><span class="fa fa-dribbble" aria-hidden="true"></span></a></li>
-						</ul>
+						{!! $social->getContent() !!}
 					</div>
 				</div>
 			</div>
-		</div>
 	</div>
   <!-- //contact -->
   <!-- copyright -->
   	 <div class="agileits-w3layouts">
       <div class="container">
-        <p>&copy; 2018 Realbuild. All rights reserved | Powered by <a href="https://www.facebook.com/ahmed.hany.777" target="_blank"><i>Ahmed Hany</i></a></p>
+        <p>&copy; 2018 {{ config('app.name', 'Laravel') }}. All rights reserved | Powered by <a href="https://www.facebook.com/ahmed.hany.777" target="_blank"><i>Ahmed Hany</i></a></p>
       </div>
 	   </div>
 	<!-- //copyright -->

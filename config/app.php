@@ -168,6 +168,16 @@ return [
         Appzcoder\CrudGenerator\CrudGeneratorServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
+        /**
+        * Ckeditor
+        */
+        Unisharp\Ckeditor\ServiceProvider::class,
+
+        /**
+         * image
+         */
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -221,6 +231,7 @@ return [
         */
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 
